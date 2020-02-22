@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.academiabb.com/wp-content/uploads/2016/03/Encuesta-Busy-Bee-clases-de-ingl%C3%A9s-Las-Palmas.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="validaciones" href="./validaciones/validaciones.js">
+    <link rel="stylesheet" href="./style/style.css">
+
+
+    <title>Servey Form</title>
+
+</head>
+
+<body>
+    <div class=" container ">
+        <header class="header ">
+            <h1 id="title " class="text-center ">Environmental Survey</h1>
+            <p id="description " class="description text-center ">
+                Rellenando esta breve encuesta, nos ayudará a obtener los mejores resultados
+            </p>
+
+            <form id="survey-form " onsubmit="validar()">
+                <!---SE AGREGA ESTE DIV PARA EL FONDO---->
+                <div class="background-image"></div>
+
+                <!--------SE AGREGA LA CLASE CONTENT-------->
+                <div class="container-fluid h-100 ">
+                    <div class="row h-100 justify-content-center align-items-center">
+                        <div class="card col-8">
+                            <div class="card-body w-100 col">
+                                <div class="row vdivide ">
+                                    <div class="col-12 ">
+                                        <img src="https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-environmentally-friendly-green-fresh-banner-image_180699.jpg" class="w-100">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col ">
+                        <label for="inputEmail4 ">First name</label>
+                        <input type="text " id="name " class="form-control " placeholder="First name " onkeypress="return sololetras(event)" onpaste="return false" required>
+                    </div>
+                    <div class="col ">
+                        <label for="inputEmail4 ">Last name</label>
+                        <input type="text " id="lastname " class="form-control " placeholder="Last name " onkeypress="return sololetras(event)" onpaste="return false" required>
+                    </div>
+
+                </div>
+                <div class="form-group col-md-6 ">
+                    <label for="inputEmail4 ">Email</label>
+                    <input type="email " class="form-control " id="inputEmail4 " placeholder="Email " required>
+                </div>
+                <div class="form-group ">
+                    <label for="exampleFormControlSelect1 ">Age</label>
+                    <input type="number" name="age" id="number" min="10" max="99" class="form-control" placeholder="Age">
+                </div>
+                <div class="row ">
+                    <div class="col-md-12 col-lg-12 ">
+                        <div class="card border-secondary mb-3 ">
+                            <div class="card-header ">
+                                <label for="genero ">Gender</label>
+                            </div>
+                            <ul class="list-group ">
+                                <li class="list-group-item ">
+                                    <div class="custom-control custom-radio ">
+                                        <input type="radio" name="gender" value="femenino" required>
+                                        <label> Femenine</label>
+
+                                        <br>
+                                        <input type="radio" name="gender" value="masculino" required>
+                                        <labe> Masculine</label>
+                                            </br>
+                                    </div>
+                                </li>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">You live in the area:</label>
+                                    <select class="form-control" id="dropdown">
+                                      <option> Rural</option>
+                                      <option> Urban</option>
+                                      <option> Mixed</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p>
+                                        In the country, he believes that the environmental situation in the last 10 years has improved:
+                                        <span class="clue">(Check all that apply)</span>
+                                    </p>
+                                    <label>
+                                        <input name="prefer" value="front-end-projects" type="checkbox" class="input-checkbox" > a) Improved
+                                       </label><br>
+                                    <label>
+                                        <input name="prefer" value="back-end-projects" type="checkbox" class="input-checkbox" > b) Maintained
+                                        </label><br>
+                                    <label><input name="prefer" value="data-visualization" type="checkbox" class="input-checkbox" > c) Worsened
+                                     </label><br>
+                                    <label><input name="prefer" value="challenges" type="checkbox" class="input-checkbox">   d) I don't know</label><br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">The concept of environment for you is synonymous with:</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+
+                                <input type="submit" class="btn btn-success" value="Success" onclick="pregunta()">
+                                <input type=" reset " class="btn btn-success " value="Delete data ">
+
+            </form>
+            <!--SCRIPT-->
+            <script src=" https://code.jquery.com/jquery-3.4.1.slim.min.js " integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n " crossorigin="anonymous "></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js " integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6 " crossorigin="anonymous "></script>
+
+            <script>
+                function sololetras(e) {
+                    key = e.keyCode || e.which;
+
+                    teclado = String.fromCharCode(key).toLowerCase();
+
+                    letras = "qwertyuiopasdfghjklñzxcvbnm ";
+
+                    especiales = "8-37-38-46-164 ";
+
+                    teclado_especial = false;
+
+                    for (var i in especiales) {
+                        if (key == especiales[i]) {
+                            teclado_especial = true;
+                            break;
+                        }
+                    }
+
+                    if (letras.indexOf(teclado) == -1 && !teclado_especial) {
+                        return false;
+                    }
+                }
+
+
+                function alerta() {
+                    var mensaje;
+                    var opcion = confirm("Clicka en Aceptar o Cancelar");
+                    if (opcion == true) {
+                        mensaje = "Has clickado OK";
+                    } else {
+                        mensaje = "Has clickado Cancelar";
+                    }
+                    document.getElementById("ejemplo").innerHTML = mensaje;
+                }
+                confirm("Sus datos han sido enviados con exito");
+            </script>
+
+
+</body>
+
+</html>

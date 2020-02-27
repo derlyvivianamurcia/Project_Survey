@@ -106,7 +106,7 @@
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>
 
-                                <input type="submit" class="btn btn-success" value="Success" onclick="pregunta()">
+                                <input type="submit" class="btn btn-success" value="Success" onclick="alerta()">
                                 <input type=" reset " class="btn btn-success " value="Delete data ">
 
             </form>
@@ -142,15 +142,16 @@
 
                 function alerta() {
                     var mensaje;
-                    var opcion = confirm("Clicka en Aceptar o Cancelar");
+                    var opcion = confirm("Desea enviar tus datos");
                     if (opcion == true) {
                         mensaje = "Has clickado OK";
                     } else {
                         mensaje = "Has clickado Cancelar";
                     }
                     document.getElementById("ejemplo").innerHTML = mensaje;
+                    confirm("Sus datos han sido enviados con exito");
+
                 }
-                confirm("Sus datos han sido enviados con exito");
             </script>
 
 
